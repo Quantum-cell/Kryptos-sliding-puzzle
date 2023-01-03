@@ -1,0 +1,156 @@
+/**
+ * I spent several hours trying to get the layout in pure-css. I got quite far
+ * using 4 aspect-ratio based media queries. It's however tricky to get
+ * everything to work perfectly, across different browsers. So I ended up just
+ * doing the board positioning in js ¯\_(ツ)_/¯.
+ */
+
+body {
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+#title {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  align-items: center;
+}
+
+#title button {
+  margin: 0.5em;
+}
+
+#container {
+  height: 100%;
+  position: relative;
+}
+
+#container div {
+  position: absolute;
+}
+
+/* Disallow scrolling */
+html, body {margin: 0; height: 100%; overflow: hidden}
+
+* {
+  box-sizing: border-box;
+  /* globally disable text selection as it can interfere with the game */
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+.unsolved {
+  border: 3px solid black;
+}
+
+.solved {
+  border: 1px solid #474;
+}
+
+.unsolved div {
+  border: 3px solid black;
+}
+
+.solved div {
+  border: 1px solid #474;
+}
+
+#board {
+  overflow: hidden;
+}
+
+#board div {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  font-size: 7vmin; /* todo: make this conditional on window shape */
+  cursor: move;
+  /* I'm unable to disable double-tap-to-zoom on mobile which means we need
+     to provide a way to un-zoom. Disab;ing zooming on the divs is a good
+     middleground. */
+  touch-action: none;
+}
+
+#goal div {
+  box-sizing: border-box;
+  border: 1px solid black; /* todo: make this conditional on window shape */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: absolute;
+  font-size: 2vmin; /* todo: make this conditional on window shape */
+  user-select: none;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+}
+
+#instr {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+#instr.enabled {
+  display: flex;
+}
+
+#instr > div {
+  background-color: #08f;
+  border: 1px solid black;
+  opacity: 0.9;
+  padding: 1em;
+}
+
+.hide #board {
+  filter: opacity(0.2);
+}
+
+.hide #goal {
+  filter: opacity(0.2);
+}
+
+.hide #title {
+  filter: opacity(0.2);
+}
+
+.hide #footer {
+  filter: opacity(0.2);
+}
+
+ul {
+  padding-top: 0;
+  margin-top: 0;
+}
+
+#levels.enabled {
+  display: flex;
+}
+
+#levels {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+#levels > div {
+  background-color: #08f;
+  border: 1px solid black;
+  opacity: 0.9;
+  padding: 1em;
+}

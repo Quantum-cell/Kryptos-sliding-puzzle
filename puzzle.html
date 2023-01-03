@@ -1,0 +1,66 @@
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="og:title" content="Alok's Sliding Puzzle">
+  <meta property="og:description" content="A sliding puzzle with a Rubik's cube-like feel.">
+  <meta property="og:image" content="https://quaxio.com/sliding_puzzle/screenshot.png">
+  <meta property="og:url" content="https://quaxio.com/sliding_puzzle/puzzle">
+
+  <link rel="stylesheet" href="puzzle.css">
+</head>
+<body>
+  <div id="title">
+    <h1>Alok's Sliding Puzzle</h1>
+    <div style="text-align: center">
+      <button id="showInstructions">How&nbsp;to&nbsp;play?</button>
+      <button id="showLevels">Pick level</button>
+    </div>
+  </div>
+  <div id="container">
+    <div id="board"></div>
+    <div id="goal"></div>
+  </div>
+  <div id="footer">
+  </div>
+
+  <div id="instr">
+    <div>
+      <p><em>A sliding puzzle with a Rubik's cube-like feel.</em></p>
+      <div><strong>Instructions:</strong></div>
+      <ul>
+        <li>This is a block moving puzzle. Blocks wrap around.</li>
+        <li>Using mouse, touch, or keyboard: slide the blocks on the larger board to match the smaller board
+        (keyboard keys: '1', '2', '3', '4', '5', '6', 'T', 'G', 'B', 'Y', 'H', 'N' and 'shift').</li>
+      </ul>
+      <p><strong>Source code: </strong><a href="https://github.com/alokmenghrajani/sliding_puzzle">sliding_puzzle</a></p>
+    </div>
+  </div>
+
+  <div id="levels">
+    <div>
+      <h1>Pick your level.</h1>
+      <h2>Original:</h2>
+      <div>Easy: 2 colors, 8 degrees of movement.</div>
+      <div>Medium: 16 colors, 8 degrees of movement.</div>
+      <div>Hard: 16 colors, 4 degrees of movement.</div>
+      <p>
+        <button id="easy">Easy</button>
+        <button id="medium">Medium</button>
+        <button id="hard">Hard</button>
+      </p>
+      <br/>
+      <h2>6x6 by shikoba:</h2>
+      <div>6x6 easy: 36 colors, 6 degrees of movement.</div>
+      <div>6x6 medium: 3 colors, 4 degrees of movement.</div>
+      <div>6x6 hard: 36 colors, 4 degrees of movement.</div>
+      <p>
+        <button id="gen_6x6_easy">6x6 easy</button>
+        <button id="gen_6x6_medium">6x6 medium</button>
+        <button id="gen_6x6_hard">6x6 hard</button>
+      </p>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
